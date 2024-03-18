@@ -1,0 +1,30 @@
+﻿@model PhanTichCamXucVanBan.ViewModels.CamXucVM
+
+<form asp-action="PredictSentiment" asp-controller="CamXuc" method="post">
+    <div class="form-group">
+        <label asp-for="KhongGian">Không gian:</label>
+        <input asp-for="KhongGian" class="form-control" />
+        <span asp-validation-for="KhongGian" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ThaiDo">Thái độ nhân viên:</label>
+        <input asp-for="ThaiDo" class="form-control" />
+        <span asp-validation-for="ThaiDo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ThucAn">Thức ăn:</label>
+        <input asp-for="ThucAn" class="form-control" />
+        <span asp-validation-for="ThucAn" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+@if (ViewBag.Ketqua != null)
+{
+    <div class="result">
+        <h4>Kết quả dự đoán:</h4>
+        <p>@ViewBag.Ketqua</p>
+    </div>
+}
