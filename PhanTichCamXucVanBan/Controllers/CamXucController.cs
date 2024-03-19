@@ -38,13 +38,13 @@ namespace PhanTichCamXucVanBan.Controllers
             var negativeProbability = result.Score[1] * 100; //Kết quẳ xác suất của Không hfai lòng
 
             string ketQua;
-            if (positiveProbability > 80)
+            //if (positiveProbability > 80)
+            //{
+            //    ketQua = "Rất hài lòng";
+            //}
+            if (positiveProbability > negativeProbability)
             {
                 ketQua = "Rất hài lòng";
-            }
-            else if (positiveProbability > negativeProbability)
-            {
-                ketQua = "Hài lòng";
             }
             else
             {
